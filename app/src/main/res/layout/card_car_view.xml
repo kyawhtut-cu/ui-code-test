@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:background="#011852">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_car"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_car_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="8dp"
+            android:text="Car Model"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_car_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:text="SMS100Z"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_no_of_seat"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_model"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_no_of_seat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="4dp"
+            android:text="5 Seater"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_distance"
+            app:layout_constraintStart_toEndOf="@+id/tv_car_no"
+            app:layout_constraintTop_toTopOf="@+id/tv_car_no"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_distance"
+            android:text="0.5Km away"
+            android:textAllCaps="true"
+            android:textColor="#32baaa"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_car_no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_no_of_seat"
+            app:layout_constraintTop_toTopOf="@+id/tv_car_no"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <TextView
+            android:id="@+id/tv_rental_fee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:text="Rental fee"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_mileage_fee"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_car_no"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_rental_fee_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:text="Fr. $3.00/hr"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rental_fee"
+            app:layout_constraintStart_toStartOf="@+id/tv_rental_fee"
+            app:layout_constraintTop_toBottomOf="@+id/tv_rental_fee"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_mileage_fee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="4dp"
+            android:text="Mileage fee"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_rental_fee"
+            app:layout_constraintTop_toTopOf="@+id/tv_rental_fee"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_mileage_fee_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="4dp"
+            android:text="$0.40/km"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_mileage_fee"
+            app:layout_constraintTop_toBottomOf="@+id/tv_mileage_fee"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

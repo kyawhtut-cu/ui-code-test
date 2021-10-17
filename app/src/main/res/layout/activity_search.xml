@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.search.SearchActivity">
+
+    <data>
+
+        <import type="com.kyawhut.ui.codetest.utils.binding.ViewBindingUtils.LayoutType" />
+
+        <import type="com.kyawhut.ui.codetest.rv.adapter.CarAdapter" />
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="carAdapter"
+            type="CarAdapter" />
+
+        <variable
+            name="onClickListener"
+            type="OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/action_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?actionBarItemBackground"
+            android:onClick="@{(v) -> onClickListener.onClick(v)}"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_back_action"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="Search Result"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/action_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/action_back"
+            app:layout_constraintTop_toTopOf="@+id/action_back"
+            tools:ignore="HardcodedText" />
+
+        <com.kyawhut.ui.codetest.ui.component.ComponentRentView
+            android:id="@+id/rent_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_back_action"
+            app:visibleGO="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_result"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#011852"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_view">
+
+            <TextView
+                android:id="@+id/tv_result_car_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="#e54a92"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/action_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/action_map"
+                tools:text="300+" />
+
+            <TextView
+                android:id="@+id/tv_result_car_count_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="cars found"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_result_car_count"
+                app:layout_constraintEnd_toStartOf="@+id/action_filter"
+                app:layout_constraintStart_toEndOf="@+id/tv_result_car_count"
+                app:layout_constraintTop_toTopOf="@+id/tv_result_car_count"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="Filter"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/action_map"
+                app:layout_constraintTop_toTopOf="@+id/action_map"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Map"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_car"
+                adapter="@{carAdapter}"
+                layoutManger="@{LayoutType.VERTICAL_LAYOUT}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/action_map"
+                tools:listitem="@layout/card_car_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

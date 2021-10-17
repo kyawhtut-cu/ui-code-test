@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_rent_car"
+        android:icon="@drawable/ic_car"
+        android:title="@string/lbl_menu_rent_car" />
+
+    <item
+        android:id="@+id/action_booking"
+        android:icon="@drawable/ic_booking"
+        android:title="@string/lbl_menu_booking" />
+
+    <item
+        android:id="@+id/action_referal"
+        android:icon="@drawable/ic_referal"
+        android:title="@string/lbl_menu_refer" />
+
+    <item
+        android:id="@+id/action_account"
+        android:icon="@drawable/ic_setting"
+        android:title="@string/lbl_menu_account" />
+
+</menu>

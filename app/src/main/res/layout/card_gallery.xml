@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="galleryURL"
+            type="String" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="4dp"
+        app:cardCornerRadius="4dp">
+
+        <ImageView
+            android:id="@+id/iv_gallery"
+            imageURL="@{galleryURL}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="@{position == 3 ? View.GONE : View.VISIBLE}"
+            app:srcCompat="@drawable/ic_direction" />
+
+        <TextView
+            android:id="@+id/tv_more_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_more_gallery"
+            android:gravity="center"
+            android:text="+10"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="@{position == 3 ? View.VISIBLE : View.GONE}"
+            tools:ignore="HardcodedText" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
